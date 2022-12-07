@@ -1,1 +1,1 @@
-https://valeriasarazhinska.github.io/goit-markup-hw-07/
+https://valeriasarazhinska.github.io/goit-js-hw-06/
