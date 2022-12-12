@@ -8,19 +8,19 @@ const destroy = document.querySelector("[data-destroy]");
 
 const createBoxes = (amount) => {
   destroyBoxes();
+  const boxesArr = [];
   for (let i = 0; i < amount; i++) {
     const div = document.createElement("div");
     div.style.width = `${30 + i * 10}px`;
     div.style.height = `${30 + i * 10}px`;
     div.style.backgroundColor = getRandomHexColor();
-    boxes.append(div);
+    boxesArr.push(div);
   }
+  boxes.append(...boxesArr);
 };
 
 const destroyBoxes = () => {
-  for (let i = boxes.children.length - 1; i >= 0; i--) {
-    boxes.children[i].remove();
-  }
+  boxes.innerHTML = "";
 };
 
 create.addEventListener("click", () => createBoxes(input.value));

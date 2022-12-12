@@ -4,13 +4,13 @@ loginForm.addEventListener("submit", handleSubmit);
 
 function handleSubmit(event) {
   event.preventDefault();
-  const email = event.currentTarget.elements.email;
-  const password = event.currentTarget.elements.password;
+  const email = event.currentTarget.elements.email.value;
+  const password = event.currentTarget.elements.password.value;
 
-  if (email.value === "" || password.value === "") {
+  if (!email || !password) {
     return alert("Please fill in all the fields!");
   }
 
-  console.log({ email: email.value, password: password.value });
+  console.log({ email, password });
   event.currentTarget.reset();
 }
